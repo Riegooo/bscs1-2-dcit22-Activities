@@ -1,4 +1,10 @@
 
+def lines(line=0, lineType=""):
+    line_num = 0
+    for line_num in range(line):
+        print(f"{lineType}", end="")
+    print("")
+
 distance = float(input("Enter distance in km : "))
 is_member = input("Is the customer a member? (Yes | No) : ").capitalize()
 order_amount = float(input("Enter your order amount : "))
@@ -23,38 +29,39 @@ if order_amount >= 1000:
     total = order_amount + DeliveryDiscount_Fee
     
     print()
-    print("==============================")
+    lines(30, "=")
     print(f"Delivery Fee: {DeliveryDiscount_Fee}")
     print(f"Order Amount: {order_amount}")
-    print("------------------------------")
+    lines(30, "-")
     print("Delivery is FREE because your order amount is ₱1000 or above.")
-    print("==============================")
+    lines(30, "=")
     print(f"Total Amount to Pay: {total}")
-    print("==============================")
+    lines(30, "=")
 
 else:
     if is_member == True:
         discount_fee = DeliveryDiscount_Fee - (DeliveryDiscount_Fee * 0.20)
         total = order_amount + discount_fee
 
-        print("\n==============================")
+        print("")
+        lines(30, "=")
         print("Order Amount:", order_amount)
         print("Original Delivery Fee:", DeliveryDiscount_Fee)
         print("Discounted Delivery Fee:", discount_fee)
-        print("------------------------------")
+        lines(30, "-")
         print("Delivery fee has been discounted because the customer is a registered member.")
-        print("==============================")
+        lines(30, "=")
         print("Total Amount to Pay:", total)
-        print("==============================")
+        lines(30, "=")
 
     else:
         total = order_amount + DeliveryDiscount_Fee
         
         print()
-        print("==============================")
+        lines(30, "=")
         print(f"Delivery Fee: {DeliveryDiscount_Fee}")
         print(f"Order Amount: {order_amount}")
-        print("==============================")
+        lines(30, "=")
         print(f"Total Amount to Pay: {total}")
-        print("==============================")
+        lines(30, "=")
         
